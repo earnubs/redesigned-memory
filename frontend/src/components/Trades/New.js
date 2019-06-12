@@ -4,6 +4,7 @@ import numeral from 'numeral';
 
 import CurrencySelector from './CurrencySelector';
 import './New.css';
+import Button from '../Button';
 
 import { NUMBER_FORMAT } from './List';
 
@@ -70,6 +71,14 @@ class New extends Component {
   }
 
   async fetchRates(buy, sell) {
+    if (buy === sell) {
+      this.setState({
+        rate: 1,
+      });
+
+      return;
+    }
+
     if (buy && sell) {
       try {
         const response = await fetch(`/api/rates/${buy}/${sell}`);
@@ -151,10 +160,10 @@ class New extends Component {
     const tradeAmount = numeral(numeral(amount).value() * rate).format(NUMBER_FORMAT);
 
     return (
-      <div className="eb-Trades-New">
-        <h2>New Trade</h2>
-        <label>Sell Amount</label>
-        <div className="eb-Select-currency">
+      <div className="eb-New">
+        <h2 className="eb-New-title">New Trade</h2>
+        <h6>Sell Amount</h6>
+        <div className="eb-New-currency">
           <CurrencySelector
             options={options}
             isLoadingCurrencies={isLoadingCurrencies}
@@ -162,29 +171,33 @@ class New extends Component {
           />
           <input
             type="number"
-            className="eb-Trades-amount"
+            className="eb-New-amount"
             onChange={this.handleAmountChange}
             defaultValue={'1.00'}
           />
         </div>
-        <div>Rate</div>
-        <div>
-          { sellCurrency && buyCurrency && `${sellCurrency}${buyCurrency}`} { rate }
+        <h6>Rate</h6>
+        <div className="eb-New-rate">
+          { (sellCurrency && buyCurrency) ?
+            `${sellCurrency}${buyCurrency} ${numeral(rate).format(NUMBER_FORMAT)}`
+            : null }
         </div>
-        <label>Buy Amount</label>
-        <div className="eb-Select-currency">
+        <h6>Buy Amount</h6>
+        <div className="eb-New-currency">
           <CurrencySelector
             options={options}
             isLoadingCurrencies={isLoadingCurrencies}
             handleCurrencyChange={this.handleBuyCurrencyChange}
           />
-          <input className="eb-Trades-amount" disabled value={tradeAmount} />
+          <input className="eb-New-amount" disabled value={tradeAmount} />
         </div>
-        <div onClick={this.handleCreate}>
-          Create
-        </div>
-        <div onClick={this.handleCancel}>
-          Cancel
+        <div className="eb-New-buttons">
+          <Button onClick={this.handleCreate}>
+            Create
+          </Button>
+          <Button onClick={this.handleCancel} mod="cancel">
+            Cancel
+          </Button>
         </div>
       </div>
     );

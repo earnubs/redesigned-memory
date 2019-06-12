@@ -26,6 +26,12 @@ table {
   color: #84959a;
 }
 
+.eb-TradesList-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .eb-TradesList-head th {
   font-family: "Roboto", sans-serif;
   font-size: 0.875rem;

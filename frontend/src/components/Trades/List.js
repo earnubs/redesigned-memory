@@ -6,6 +6,7 @@ import format from 'date-fns/format';
 import parseISO from 'date-fns/parseISO';
 
 import './List.css';
+import Button from '../Button';
 
 export const NUMBER_FORMAT = '0,0.00';
 export const DATE_FORMAT = 'dd/MM/yyyy hh:mm';
@@ -80,8 +81,12 @@ TableBody.propTypes = {
 export function List({ trades }) {
   return (
     <div>
-      <h2>Booked Trades</h2>
-      <Link to="/new">[plus icon] New Trade</Link>
+      <div className="eb-TradesList-banner">
+        <h2>Booked Trades</h2>
+        <Button>
+          <Link to="/new">New Trade</Link>
+        </Button>
+      </div>
       <table className="eb-Trades-List">
         <TableHead />
         <TableBody trades={ trades } />

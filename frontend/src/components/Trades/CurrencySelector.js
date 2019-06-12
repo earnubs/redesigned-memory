@@ -5,7 +5,7 @@ import Select from 'react-select';
 const styles = {
   container: (provided, state) => ({
     ...provided,
-    width: 90,
+    width: 155,
     zIndex: state.isFocused ? 10 : 'initial',
     color: '#556468',
   }),

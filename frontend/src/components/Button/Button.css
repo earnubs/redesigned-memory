@@ -1,0 +1,18 @@
+.eb-Button {
+  cursor: pointer;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background-color: #00bef0;
+  display: inline-block;
+  color: white;
+}
+
+.eb-Button a {
+  color: white;
+  text-decoration: none;
+}
+
+.eb-Button--cancel {
+  background-color: transparent;
+  color: #00bef0;
+}
