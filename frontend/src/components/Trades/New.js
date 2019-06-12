@@ -31,6 +31,10 @@ class New extends Component {
   }
 
   async componentDidMount() {
+    this.fetchCurrencies();
+  }
+
+  async fetchCurrencies() {
     try {
       const response = await fetch('/api/currencies/');
       if (response.ok) {

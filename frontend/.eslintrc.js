@@ -48,5 +48,6 @@ module.exports = {
       "always"
     ],
     "comma-dangle": ["error", "always-multiline"],
+    "no-console": process.env.NODE_ENV === "production" ? 2 : 0,
   }
 };
