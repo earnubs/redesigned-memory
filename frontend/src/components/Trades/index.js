@@ -1,13 +1,9 @@
 import React from 'react';
-import format from 'date-fns/format';
-import parseISO from 'date-fns/parseISO';
-import compareAsc from 'date-fns/compareAsc';
 
 import Layout from './Layout';
 import List from './List';
 import New from './New';
 
-const DATE_FORMAT = 'dd/MM/yyyy hh:mm';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,18 +22,17 @@ class App extends React.Component {
     });
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.fetchTrades();
+  }
+
+  async fetchTrades() {
     try {
       const response = await fetch('/api/trades/');
       if (response.ok) {
         const trades = await response.json();
 
-        const sortedTrades = trades.map(trade => {
-          trade.date_booked = format(parseISO(trade.date_booked), DATE_FORMAT);
-          return trade;
-        }).sort(() => compareAsc);
-
-        this.setState({ trades: sortedTrades });
+        this.setState({ trades });
       }
     } catch(err) {
       // XXX ErrorBoundary

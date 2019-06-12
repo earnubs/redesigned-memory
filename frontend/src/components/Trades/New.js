@@ -30,7 +30,7 @@ class New extends Component {
     this.handleCancel = this.handleCancel.bind(this);
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     this.fetchCurrencies();
   }
 

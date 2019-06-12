@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import numeral from 'numeral';
+import format from 'date-fns/format';
+import parseISO from 'date-fns/parseISO';
 
 import './List.css';
 
 export const NUMBER_FORMAT = '0,0.00';
+export const DATE_FORMAT = 'dd/MM/yyyy hh:mm';
 
 export function TableHead() {
   return (
@@ -57,7 +60,7 @@ export function TableBody({ trades }) {
                 {trade.rate}
               </td>
               <td>
-                { trade.date_booked }
+                { format(parseISO(trade.date_booked), DATE_FORMAT) }
               </td>
             </tr>
           )) : null
