@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout components should render <Box/> as expected 1`] = `
+<div
+  className="eb-Layout-Box"
+>
+  Test
+</div>
+`;
+
+exports[`Layout components should render <Layout /> as expected 1`] = `
+<div
+  className="eb-Layout"
+>
+  <Box
+    style={
+      Object {
+        "width": 860,
+      }
+    }
+  >
+    <div>
+      List
+    </div>
+  </Box>
+  <Route
+    exact={true}
+    path="/new"
+    render={[Function]}
+  />
+</div>
+`;

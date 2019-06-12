@@ -1,0 +1,32 @@
+version: '2.1'
+
+services:
+  backend:
+    build: ./docker/dev/backend
+    volumes:
+      - ./backend:/usr/src/app
+      - ./docker/dev/backend/entrypoint.sh:/usr/bin/entrypoint.sh
+    entrypoint: /usr/bin/entrypoint.sh
+    environment:
+      - FIXERIO_API_USE_CANNED_RESPONSES=${FIXERIO_API_USE_CANNED_RESPONSES:-true}
+      - FIXERIO_API_ACCESS_KEY=${FIXERIO_API_ACCESS_KEY:-""}
+      - PIPENV_CACHE_DIR=/usr/src/app/.pipcache
+      - PIPENV_VENV_IN_PROJECT=true
+    ports:
+      - 8000:8000
+    stdin_open: true
+    tty: true
+
+  frontend:
+    depends_on:
+      - backend
+    image: node:12
+    volumes:
+      - ./frontend:/app
+      - ./docker/dev/frontend/entrypoint.sh:/usr/bin/entrypoint.sh
+    working_dir: /app
+    entrypoint: /usr/bin/entrypoint.sh
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true

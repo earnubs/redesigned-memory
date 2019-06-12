@@ -1,0 +1,40 @@
+.eb-Trades-List {
+  width: 100%;
+}
+
+.eb-Trades-List td {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+table, tr, td, th {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.eb-TradesList-row td {
+  padding:8px 16px;
+  border-bottom: 1px solid #dde2e3;
+}
+
+.eb-TradesList-head {
+  text-transform: uppercase;
+  color: #84959a;
+}
+
+.eb-TradesList-head th {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: left;
+  padding:24px 16px 8px 16px;
+  border-bottom: 1px solid #dde2e3;
+}
+
+.eb-TradesList--lighter {
+  color: #84959a;
+}

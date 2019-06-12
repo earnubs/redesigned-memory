@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List components should render List as expected 1`] = `
+<div>
+  <h2>
+    Booked Trades
+  </h2>
+  <Link
+    to="/new"
+  >
+    [plus icon] New Trade
+  </Link>
+  <table
+    className="eb-Trades-List"
+  >
+    <TableHead />
+    <TableBody
+      trades={
+        Array [
+          Object {
+            "buy_amount": "87.81",
+            "buy_currency": "GBP",
+            "date_booked": "2019-06-10T20:06:57.313042Z",
+            "id": "TR3W659X2",
+            "rate": "0.878085",
+            "sell_amount": "100.00",
+            "sell_currency": "USD",
+          },
+        ]
+      }
+    />
+  </table>
+</div>
+`;
+
+exports[`List components should render TableBody as expected 1`] = `
+<tbody>
+  <tr
+    className="eb-TradesList-row"
+    key="TR3W659X2"
+  >
+    <td
+      className="eb-TradesList--lighter"
+    >
+      USD
+    </td>
+    <td>
+      100.00
+    </td>
+    <td
+      className="eb-TradesList--lighter"
+    >
+      GBP
+    </td>
+    <td>
+      87.81
+    </td>
+    <td>
+      0.878085
+    </td>
+    <td>
+      2019-06-10T20:06:57.313042Z
+    </td>
+  </tr>
+</tbody>
+`;
+
+exports[`List components should render TableHead as expected 1`] = `
+<thead>
+  <tr
+    className="eb-TradesList-head"
+  >
+    <th>
+      Sell CCY
+    </th>
+    <th>
+      Sell amount
+    </th>
+    <th>
+      Buy CCY
+    </th>
+    <th>
+      Buy amount
+    </th>
+    <th>
+      Rate
+    </th>
+    <th>
+      Date booked
+    </th>
+  </tr>
+</thead>
+`;

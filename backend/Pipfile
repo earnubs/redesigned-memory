@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+Django = "==2.2.1"
+django-rest-framework = "*"
+requests = "*"
+coreapi = "*"
+
+[dev-packages]
+black = "*"
+pipfile = "*"
+flake8 = "*"
+pylint-django = "*"
+responses = "*"
+
+[pipenv]
+allow_prereleases = true
+
+[requires]
+python_version = "3.7"

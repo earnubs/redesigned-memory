@@ -1,0 +1,17 @@
+.eb-Layout-Box {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.10);
+  padding: 2rem;
+  margin: 2rem auto;
+}
+
+.eb-Layout-screen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(243,249,252,0.8);
+  z-index: 10000;
+}

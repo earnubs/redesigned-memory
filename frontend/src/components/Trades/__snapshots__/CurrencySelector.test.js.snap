@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CurrencySelector /> should render as expected 1`] = `
+<StateManager
+  defaultInputValue=""
+  defaultMenuIsOpen={false}
+  defaultValue={null}
+  isLoading={true}
+  isSearchable={true}
+  maxMenuHeight={128}
+  onChange={[Function]}
+  options={Array []}
+  placeholder={null}
+  styles={
+    Object {
+      "container": [Function],
+      "control": [Function],
+      "indicatorSeparator": [Function],
+      "menu": [Function],
+      "menuList": [Function],
+      "menuPortal": [Function],
+      "singleValue": [Function],
+    }
+  }
+/>
+`;
